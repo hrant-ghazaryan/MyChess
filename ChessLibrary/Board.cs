@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ChessLibrary
+﻿namespace ChessLibrary
 {
     public class Board
     {
-        public Location[,] board = new Location[8, 8];
+        public int[,] board = new int[8, 8];
     }
 }
