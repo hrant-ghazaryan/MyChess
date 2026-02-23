@@ -15,12 +15,12 @@ Bishop bishop = new Bishop();
 b = bishop.IsMovePossible(x, y);
 
 King king = new King();
-b = bishop.IsMovePossible(x, y);
+b = king.IsMovePossible(x, y);
 
 Knight knight = new Knight();
-b = bishop.IsMovePossible(x, y);
+b = knight.IsMovePossible(x, y);
 
 Pawn pawn = new Pawn();
-b = bishop.IsMovePossible(x, y);*/
+b = pawn.IsMovePossible(x, y);*/
 
 Console.WriteLine(b);
