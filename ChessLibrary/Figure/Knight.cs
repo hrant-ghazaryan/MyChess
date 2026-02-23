@@ -1,41 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ChessLibrary
+﻿namespace ChessLibrary
 {
     public class Knight
     {
-        public byte point;
-        public byte count;
-        public bool isUnderAttack;
-        public bool moveBlock;
-        public Location location;
         public Color color;
+        public Location location;
 
-        public bool IsMovePossible(string value, string value2)
+        public bool IsMovePossible(Location start, Location target)
         {
-            Location start = new Location(value);
-            Location target = new Location(value2);
-            bool[,] board = new bool[8, 8];
-            int[] dx = { -2, -2, -1, -1, 1, 1, 2, 2 };
-            int[] dy = { -1, 1, -2, 2, -2, 2, -1, 1 };
-
-            for (int k = 0; k < 8; k++)
-            {
-                Location Move;
-                Move.X = start.X + dx[k];
-                Move.Y = start.Y + dy[k];
-
-                if (IsInside(Move))
-                {
-                    board[Move.X, (int)Move.Y] = true;
-                }
-            }
-            if (board[target.X, (int)target.Y])
+            if (Math.Abs(start.X - target.X) == 2 && Math.Abs(start.Y - target.Y) == 1)
                 return true;
-            else
-                return false;
+            else if(Math.Abs(start.X - target.X) == 1 && Math.Abs(start.Y - target.Y) == 2)
+                return true;
+            return false;
         }
         public bool IsInside(Location loc)
         {

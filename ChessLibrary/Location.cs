@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ChessLibrary
+﻿namespace ChessLibrary
 {
     public struct Location
     {
@@ -12,6 +8,11 @@ namespace ChessLibrary
         {
             X = 7 - (coord[1] - '1');
             Y = (BoardL)(coord[0] - 'A');
+        }
+        public Location(int x , BoardL boardl)
+        {
+            X = x;
+            Y = boardl;
         }
     }
 }

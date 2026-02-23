@@ -1,26 +1,44 @@
 ﻿using ChessLibrary;
 
-Console.Write(Start Location: )
-string? x = Console.RaedLine();
-Console.Write(Target Location: )
-string? y = Console.RaedLine();
+Console.Write("Start Location: ");
+Location start = LocValuation();
+Console.Write("Target  Location: ");
+Location target = LocValuation();
 
-/*Queen queen = new Queen();
-bool b = queen.IsMovePossible(x, y);
+Rook rook = new Rook(); Bishop bishop = new Bishop(); 
+Pawn pawn = new Pawn((Color)1); Knight knight = new Knight(); 
+Queen queen = new Queen(); King king = new King(); 
+Console.WriteLine(Message(king, king.IsMovePossible(start, target), target));
+Console.WriteLine(Message(rook, rook.IsMovePossible(start, target), target));
+Console.WriteLine(Message(bishop, bishop.IsMovePossible(start, target), target));
+Console.WriteLine(Message(pawn, pawn.IsMovePossible(start, target), target));
+Console.WriteLine(Message(knight, knight.IsMovePossible(start, target), target));
+Console.WriteLine(Message(queen, queen.IsMovePossible(start, target), target));
 
-Rook rook = new Rook();
-b = rook.IsMovePossible(x, y);
 
-Bishop bishop = new Bishop();
-b = bishop.IsMovePossible(x, y);
+static Location LocValuation()
+{
+    string? value;
 
-King king = new King();
-b = king.IsMovePossible(x, y);
+    do
+    {
+        value = Console.ReadLine()?.ToUpper();
+    }
+    while (value?.Length != 2 ||
+           value[0] < 'A' || value[0] > 'H' ||
+           value[1] < '1' || value[1] > '8');
 
-Knight knight = new Knight();
-b = knight.IsMovePossible(x, y);
+    int x = 7 - (value[1] - '1');
+    BoardL y = (BoardL)(value[0] - 'A');
 
-Pawn pawn = new Pawn();
-b = pawn.IsMovePossible(x, y);*/
-
-Console.WriteLine(b);
+    return new Location(x, y);
+}
+static string Message(Object obj, bool b , Location loc)
+{
+    string s;
+    if (b)
+        s = $"{obj} can move {loc.Y}{loc.X}";
+    else
+        s = $"{obj} can't move {loc.Y}{loc.X}";
+    return s;
+}

@@ -2,33 +2,28 @@ namespace ChessLibrary
 {
     public class Pawn
     {
-        public byte point;
-        public byte count;
         public bool isMoved;
-        public bool isUnderAttack;
-        public bool moveBlock;
-        public Location location;
         public Color color;
-        public bool IsMovePossible(string value1, string value2)
+        public Location location;
+        public Pawn(Color x)
         {
-            Location start = new Location(value1);
-            Location target = new Location(value2);
+            color = x;
+        }
+        public bool IsMovePossible(Location start , Location target)
+        {
+            if (start.X == 6 || start.X == 1) isMoved = false;
             if (color == Color.White)
             {
-                if (target.X - start.X == 0 && target.Y - start.Y == 1)
+                if (start.X - target.X == 1 && start.Y == target.Y)
                     return true;
-                if (target.X - start.X == 0 && target.Y - start.Y == 2 && !isMoved)
-                    return true;
-                if (Math.Abs(target.X - start.X) == 1 && target.Y - start.Y == 1)
+                else if (start.X - target.X == 2 && !isMoved && start.Y == target.Y)
                     return true;
             }
             if (color == Color.Black)
             {
-                if (target.X - start.X == 0 && target.Y - start.Y == -1)
+                if (target.X - start.X == 1 && start.Y == target.Y)
                     return true;
-                if (target.X - start.X == 0 && target.Y - start.Y == -2 && !isMoved)
-                    return true;
-                if (Math.Abs(target.X - start.X) == 1 && target.Y - start.Y == -1)
+                else if (target.X - start.X == 2 && !isMoved && start.Y == target.Y)
                     return true;
             }
             return false;

@@ -2,6 +2,6 @@
 {
     public class Board
     {
-        public int[,] board = new int[8, 8];
+        public Location[,] board = new Location[8, 8];
     }
 }
