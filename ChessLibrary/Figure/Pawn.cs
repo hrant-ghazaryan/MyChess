@@ -9,7 +9,29 @@ namespace ChessLibrary
         public bool moveBlock;
         public Location location;
         public Color color;
-        public Pawn(Color x , Location y)
+        public bool IsMovePossible(Location start, Location target)
+        {
+            if (color == Color.White)
+            {
+                if (target.X - start.X == 0 && target.Y - start.Y == 1)
+                    return true;
+                if (target.X - start.X == 0 && target.Y - start.Y == 2 && !isMoved)
+                    return true;
+                if (Math.Abs(target.X - start.X) == 1 && target.Y - start.Y == 1)
+                    return true;
+            }
+            if (color == Color.Black)
+            {
+                if (target.X - start.X == 0 && target.Y - start.Y == -1)
+                    return true;
+                if (target.X - start.X == 0 && target.Y - start.Y == -2 && !isMoved)
+                    return true;
+                if (Math.Abs(target.X - start.X) == 1 && target.Y - start.Y == -1)
+                    return true;
+            }
+            return false;
+        }
+        public Pawn(Color x, Location y)
         {
             bool isNum = false;
             if (x == Color.White)
@@ -17,9 +39,9 @@ namespace ChessLibrary
                 if (y.X <= 6)
                     location = y;
                 else
-                    while(isNum == false)
+                    while (isNum == false)
                     {
-                        isNum = int.TryParse(Console.ReadLine(),out y.X);
+                        isNum = int.TryParse(Console.ReadLine(), out y.X);
                         if (y.X <= 6)
                         {
                             location = y;
@@ -34,47 +56,5 @@ namespace ChessLibrary
             }
         }
 
-        public bool WhiteIsMovePossible(Location start, Location target)
-        {
-            bool canMove = false;
-            if (color == Color.White && start.X == 6)
-            {
-                if (start.X - target.X == 1 && start.Y == target.Y)
-                    canMove = true;
-                else if (start.X - target.X == 1 && Math.Abs(start.Y - target.Y) == 1)
-                    canMove = true;
-                else if (start.X - target.X == 2 && start.Y == target.Y)
-                    canMove = true;
-            }
-            else if (color == 0 && start.X != 6)
-            {
-                if (start.X - target.X == 1 && start.Y == target.Y)
-                    canMove = true;
-                else if (start.X - target.X == 1 && Math.Abs(start.Y - target.Y) == 1)
-                    canMove = true;
-            }
-            return canMove;
-        }
-        public bool BlackIsMovePossible(Location start, Location target)
-        {
-            bool canMove = false; ;
-            if (color == Color.Black && start.X == 1)
-            {
-                if (target.X - start.X == 1 && start.Y == target.Y)
-                    canMove = true;
-                else if (target.X - start.X == 1 && Math.Abs(start.Y - target.Y) == 1)
-                    canMove = true;
-                else if (target.X - start.X == 2 && start.Y == target.Y)
-                    canMove = true;
-            }
-            else if (color == Color.Black && start.X != 1)
-            {
-                if (target.X - start.X == 1 && start.Y == target.Y)
-                    canMove = true;
-                else if (target.X - start.X == 1 && Math.Abs(start.Y - target.Y) == 1)
-                    canMove = true;
-            }
-            return canMove;
-        }
     }
 }
