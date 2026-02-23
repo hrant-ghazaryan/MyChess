@@ -33,30 +33,5 @@ namespace ChessLibrary
             }
             return false;
         }
-        public Pawn(Color x, Location y)
-        {
-            bool isNum = false;
-            if (x == Color.White)
-            {
-                if (y.X <= 6)
-                    location = y;
-                else
-                    while (isNum == false)
-                    {
-                        isNum = int.TryParse(Console.ReadLine(), out y.X);
-                        if (y.X <= 6)
-                        {
-                            location = y;
-                            isNum = true;
-                        }
-                    }
-            }
-            if (x == Color.Black)
-            {
-                if (y.X >= 1)
-                    location = y;
-            }
-        }
-
     }
 }
