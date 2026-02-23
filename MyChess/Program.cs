@@ -14,7 +14,7 @@ b = rook.IsMovePossible(x, y);
 Bishop bishop = new Bishop();
 b = bishop.IsMovePossible(x, y);
 
-King king = new Bishop();
+King king = new King();
 b = bishop.IsMovePossible(x, y);
 
 Knight knight = new Knight();
