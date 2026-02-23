@@ -1,10 +1,26 @@
 ﻿using ChessLibrary;
 
-Queen queen = new Queen();
+Console.Write(Start Location: )
+string? x = Console.RaedLine();
+Console.Write(Target Location: )
+string? y = Console.RaedLine();
+
+/*Queen queen = new Queen();
+bool b = queen.IsMovePossible(x, y);
+
 Rook rook = new Rook();
+b = rook.IsMovePossible(x, y);
+
 Bishop bishop = new Bishop();
+b = bishop.IsMovePossible(x, y);
+
 King king = new Bishop();
+b = bishop.IsMovePossible(x, y);
+
 Knight knight = new Knight();
+b = bishop.IsMovePossible(x, y);
+
 Pawn pawn = new Pawn();
-bool b = queen.IsMovePossible("A1", "A8");
+b = bishop.IsMovePossible(x, y);*/
+
 Console.WriteLine(b);
