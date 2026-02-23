@@ -1,4 +1,4 @@
-﻿namespace ChessLibrary
+namespace ChessLibrary
 {
     public class Pawn
     {
@@ -76,7 +76,5 @@
             }
             return canMove;
         }
-        public string PrintLocation(Location location)
-        { return location.Y.ToString() + location.X.ToString();}
     }
 }
