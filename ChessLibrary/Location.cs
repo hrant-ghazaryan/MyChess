@@ -9,10 +9,10 @@
             X = 7 - (coord[1] - '1');
             Y = (BoardL)(coord[0] - 'A');
         }
-        public Location(int x , BoardL boardl)
+        public Location(int row , BoardL col)
         {
-            X = x;
-            Y = boardl;
+            X = row;
+            Y = col;
         }
     }
 }

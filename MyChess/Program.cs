@@ -8,18 +8,17 @@ Location target = LocValuation();
 Rook rook = new Rook(); Bishop bishop = new Bishop(); 
 Pawn pawn = new Pawn((Color)1); Knight knight = new Knight(); 
 Queen queen = new Queen(); King king = new King(); 
-Console.WriteLine(Message(king, king.IsMovePossible(start, target), target));
-Console.WriteLine(Message(rook, rook.IsMovePossible(start, target), target));
-Console.WriteLine(Message(bishop, bishop.IsMovePossible(start, target), target));
-Console.WriteLine(Message(pawn, pawn.IsMovePossible(start, target), target));
-Console.WriteLine(Message(knight, knight.IsMovePossible(start, target), target));
-Console.WriteLine(Message(queen, queen.IsMovePossible(start, target), target));
+Console.WriteLine(Message(king, king.IsMovePossible(start, target)));
+Console.WriteLine(Message(rook, rook.IsMovePossible(start, target)));
+Console.WriteLine(Message(bishop, bishop.IsMovePossible(start, target)));
+Console.WriteLine(Message(pawn, pawn.IsMovePossible(start, target)));
+Console.WriteLine(Message(knight, knight.IsMovePossible(start, target)));
+Console.WriteLine(Message(queen, queen.IsMovePossible(start, target)));
 
 
 static Location LocValuation()
 {
     string? value;
-
     do
     {
         value = Console.ReadLine()?.ToUpper();
@@ -33,12 +32,10 @@ static Location LocValuation()
 
     return new Location(x, y);
 }
-static string Message(Object obj, bool b , Location loc)
+static string Message(Object obj, bool b)
 {
-    string s;
     if (b)
-        s = $"{obj} can move {loc.Y}{loc.X}";
+        return $"{obj.GetType().Name} can be moved to the specified location";
     else
-        s = $"{obj} can't move {loc.Y}{loc.X}";
-    return s;
+        return $"{obj.GetType().Name} can't move moved to the specified location";
 }
