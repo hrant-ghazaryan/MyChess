@@ -16,7 +16,7 @@ namespace ChessLibrary
         }
         public bool IsMovePossible(Location start , Location target)
         {
-            if (start.X == 6 || start.X == 1) isMoved = false;
+            if ((int)start.X == 6 || (int)start.X == 1) isMoved = false;
             if (color == Color.White)
             {
                 if (start.X - target.X == 1 && start.Y == target.Y)

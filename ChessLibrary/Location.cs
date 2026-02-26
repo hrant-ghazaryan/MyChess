@@ -1,15 +1,17 @@
-﻿namespace ChessLibrary
+﻿using ChessLibrary.Enums;
+
+namespace ChessLibrary
 {
     public struct Location
     {
-        public int X;
+        public BoardN X;
         public BoardL Y;
         public Location(string coord)
         {
-            X = 7 - (coord[1] - '1');
+            X = (BoardN)7 - (coord[1] - '1');
             Y = (BoardL)(coord[0] - 'A');
         }
-        public Location(int row, BoardL col)
+        public Location(BoardN row, BoardL col)
         { X = row; Y = col; }
     }
 }

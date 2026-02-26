@@ -1,4 +1,5 @@
 ﻿using ChessLibrary;
+using ChessLibrary.Enums;
 
 Console.Write("Start Location: ");
 Location start = LocValuation();
@@ -27,7 +28,7 @@ static Location LocValuation()
            value[0] < 'A' || value[0] > 'H' ||
            value[1] < '1' || value[1] > '8');
 
-    int x = 7 - (value[1] - '1');
+    BoardN x = (BoardN)(7 - (value[1] - '1'));
     BoardL y = (BoardL)(value[0] - 'A');
 
     return new Location(x, y);

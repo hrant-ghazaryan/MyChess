@@ -30,7 +30,7 @@
         }
         public bool IsInside(Location loc)
         {
-            if (loc.X >= 0 && loc.X < 8 &&
+            if ((int)loc.X >= 0 && (int)loc.X < 8 &&
                 (int)loc.Y >= 0 && (int)loc.Y < 8)
                 return true;
             return false;
