@@ -9,6 +9,11 @@ namespace ChessLibrary
         {
             color = x;
         }
+        public Pawn(Pawn pawn)
+        {
+            color = pawn.color;
+            location = pawn.location;
+        }
         public bool IsMovePossible(Location start , Location target)
         {
             if (start.X == 6 || start.X == 1) isMoved = false;
