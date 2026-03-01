@@ -17,7 +17,7 @@
         }
         public Bishop(Bishop bishop)
         {
-            color = bishop.color;  
+            color = bishop.color;
             location = bishop.location;
         }
         public bool IsMovePossible(Location start, Location target)
@@ -34,5 +34,19 @@
             return false;
         }
 
+        public bool IsMovePossible3(Location start, Location target, Location third)
+        {
+            if (IsMovePossible(start, target)
+               && IsMovePossible(start, third) && IsMovePossible(third, target))
+            {
+                if ((Math.Abs(start.X - third.X) < Math.Abs(start.X - target.X)) 
+                    && Math.Abs(target.X - third.X) < Math.Abs(start.X - target.X))
+                    return false;
+                return true;
+            }
+            else if (IsMovePossible(start, target))
+                return true;
+            return false;
+        }
     }
 }

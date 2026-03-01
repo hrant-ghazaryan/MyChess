@@ -2,13 +2,19 @@
 using ChessLibrary.Enums;
 
 Console.Write("Start Location: ");
-Location start = LocValuation();
+Location start = LocValidation();
 Console.Write("Target  Location: ");
-Location target = LocValuation();
+Location target = LocValidation();
+Console.Write("thirdF  Location: ");
+Location thirdF = LocValidation();
 
 Rook rook = new Rook(); Bishop bishop = new Bishop(); 
 Pawn pawn = new Pawn((Color)1); Knight knight = new Knight(); 
 Queen queen = new Queen(); King king = new King();
+Console.WriteLine($"Bishop: {bishop.IsMovePossible3(start, target, thirdF)}");
+Console.WriteLine($"Rook: {rook.IsMovePossible3(start, target, thirdF)}");
+Console.WriteLine($"Queen: {queen.IsMovePossible3(start, target, thirdF)}");
+Console.WriteLine("----------");
 Console.WriteLine(Message(pawn, pawn.IsMovePossible(start, target)));
 Console.WriteLine(Message(king, king.IsMovePossible(start, target)));
 Console.WriteLine(Message(bishop, bishop.IsMovePossible(start, target)));
@@ -16,8 +22,7 @@ Console.WriteLine(Message(knight, knight.IsMovePossible(start, target)));
 Console.WriteLine(Message(rook, rook.IsMovePossible(start, target)));
 Console.WriteLine(Message(queen, queen.IsMovePossible(start, target)));
 
-
-static Location LocValuation()
+static Location LocValidation()
 {
     string? value;
     do
