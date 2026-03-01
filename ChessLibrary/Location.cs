@@ -13,5 +13,10 @@ namespace ChessLibrary
         }
         public Location(BoardN row, BoardL col)
         { X = row; Y = col; }
+        public int this[int[,] board]
+        {
+            get => board[(int)X, (int)Y];
+            set => board[(int)X, (int)Y] = value;
+        }
     }
 }

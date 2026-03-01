@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="ChessLibrary/ChessLibrary.csproj" />
+  <Project Path="HorseMove/HorseMove.csproj" Id="c24083ec-dc7a-48f4-bfc6-cb65e9ae81dc" />
   <Project Path="MyChess/MyChess.csproj" />
 </Solution>
