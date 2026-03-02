@@ -4,8 +4,8 @@ namespace ChessLibrary
 {
     public struct Location
     {
-        public BoardN X;
-        public BoardL Y;
+        public BoardN X { get; set; }
+        public BoardL Y { get; set; }
         public Location(string coord)
         {
             X = (BoardN)7 - (coord[1] - '1');

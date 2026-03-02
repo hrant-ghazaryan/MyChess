@@ -2,8 +2,8 @@
 {
     public class Queen
     {
-        public Color color;
-        public Location location;
+        public Color color { get; set; }
+        public Location location { get; set; }
         public Queen()
         { }
         public Queen(Color color)

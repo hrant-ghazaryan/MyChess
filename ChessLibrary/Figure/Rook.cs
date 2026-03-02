@@ -2,8 +2,8 @@
 {
     public class Rook
     {
-        public Color color;
-        public Location location;
+        public Color color { get; set; }
+        public Location location { get; set; }
         public Rook()
         { }
         public Rook(Color color)

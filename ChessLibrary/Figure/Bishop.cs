@@ -2,8 +2,8 @@
 {
     public class Bishop
     {
-        public Color color;
-        public Location location;
+        public Color color { get; set; }
+        public Location location { get; set; }
         public Bishop()
         { }
         public Bishop(Color color)
@@ -39,7 +39,7 @@
             if (IsMovePossible(start, target)
                && IsMovePossible(start, third) && IsMovePossible(third, target))
             {
-                if ((Math.Abs(start.X - third.X) < Math.Abs(start.X - target.X)) 
+                if ((Math.Abs(start.X - third.X) < Math.Abs(start.X - target.X))
                     && Math.Abs(target.X - third.X) < Math.Abs(start.X - target.X))
                     return false;
                 return true;

@@ -2,8 +2,8 @@
 {
     public class King
     {
-        public Color color;
-        public Location location;
+        public Color color { get; set; }
+        public Location location { get; set; }
         public King()
         { }
         public King(Color color)

@@ -2,9 +2,9 @@ namespace ChessLibrary
 {
     public class Pawn
     {
-        public bool isMoved;
-        public Color color;
-        public Location location;
+        public bool isMoved { get; set; }
+        public Color color { get; set; }
+        public Location location { get; set; }
         public Pawn(Color x)
         {
             color = x;

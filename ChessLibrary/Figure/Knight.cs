@@ -2,8 +2,8 @@
 {
     public class Knight
     {
-        public Color color;
-        public Location location;
+        public Color color { get; set; }
+        public Location location { get; set; }
         public Knight()
         { }
         public Knight(Color color)
