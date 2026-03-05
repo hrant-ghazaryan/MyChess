@@ -1,9 +1,9 @@
-﻿namespace ChessLibrary
+﻿using ChessLibrary.Figure;
+
+namespace ChessLibrary
 {
-    public class King
+    public class King : Figuree
     {
-        public Color color { get; set; }
-        public Location location { get; set; }
         public King()
         { }
         public King(Color color)

@@ -1,9 +1,9 @@
-﻿namespace ChessLibrary
+﻿using ChessLibrary.Figure;
+
+namespace ChessLibrary
 {
-    public class Bishop
+    public class Bishop : Figuree
     {
-        public Color color { get; set; }
-        public Location location { get; set; }
         public Bishop()
         { }
         public Bishop(Color color)
@@ -26,14 +26,6 @@
                 return true;
             return false;
         }
-        public bool IsInside(Location loc)
-        {
-            if ((int)loc.X >= 0 && (int)loc.X < 8 &&
-                (int)loc.Y >= 0 && (int)loc.Y < 8)
-                return true;
-            return false;
-        }
-
         public bool IsMovePossible3(Location start, Location target, Location third)
         {
             if (IsMovePossible(start, target)

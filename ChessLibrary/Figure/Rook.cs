@@ -1,9 +1,9 @@
-﻿namespace ChessLibrary
+﻿using ChessLibrary.Figure;
+
+namespace ChessLibrary
 {
-    public class Rook
+    public class Rook : Figuree
     {
-        public Color color { get; set; }
-        public Location location { get; set; }
         public Rook()
         { }
         public Rook(Color color)
@@ -39,13 +39,6 @@
                 return true;
             }
             else if (IsMovePossible(start, target))
-                return true;
-            return false;
-        }
-        public bool IsInside(Location loc)
-        {
-            if ((int)loc.X >= 0 && (int)loc.X < 8 &&
-                (int)loc.Y >= 0 && (int)loc.Y < 8)
                 return true;
             return false;
         }

@@ -46,12 +46,5 @@
                 return true;
             return false;
         }
-        public bool IsInside(Location loc)
-        {
-            if ((int)loc.X >= 0 && (int)loc.X < 8 &&
-                (int)loc.Y >= 0 && (int)loc.Y < 8)
-                return true;
-            return false;
-        }
     }
 }

@@ -1,9 +1,9 @@
-﻿namespace ChessLibrary
+﻿using ChessLibrary.Figure;
+
+namespace ChessLibrary
 {
-    public class Knight
+    public class Knight : Figuree
     {
-        public Color color { get; set; }
-        public Location location { get; set; }
         public Knight()
         { }
         public Knight(Color color)
@@ -25,13 +25,6 @@
             if (Math.Abs(start.X - target.X) == 2 && Math.Abs(start.Y - target.Y) == 1)
                 return true;
             else if(Math.Abs(start.X - target.X) == 1 && Math.Abs(start.Y - target.Y) == 2)
-                return true;
-            return false;
-        }
-        public bool IsInside(Location loc)
-        {
-            if ((int)loc.X >= 0 && (int)loc.X < 8 &&
-                (int)loc.Y >= 0 && (int)loc.Y < 8)
                 return true;
             return false;
         }

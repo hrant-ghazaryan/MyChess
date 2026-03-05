@@ -1,10 +1,10 @@
+using ChessLibrary.Figure;
+
 namespace ChessLibrary
 {
-    public class Pawn
+    public class Pawn : Figuree
     {
         public bool isMoved { get; set; }
-        public Color color { get; set; }
-        public Location location { get; set; }
         public Pawn(Color x)
         {
             color = x;
